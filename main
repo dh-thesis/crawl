@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+mkdir -p ../base/data/mpis
+mkdir -p ../base/data/mpis/map
+mkdir -p ../base/data/mpis/mapped
+mkdir -p ../base/data/mpis/scrape
+source env/bin/activate
+python -m src
+deactivate

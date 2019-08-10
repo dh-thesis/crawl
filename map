@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source env/bin/activate
+python -m src.map_mpis_eng
+python -m src.map_mpis_deu
+python -m map_mpis
+deactivate
