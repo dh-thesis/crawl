@@ -6,11 +6,11 @@ from .utils_paths import BASE_DIR
 
 MPIS_DIR = BASE_DIR + 'mpis/'
 
-print("console output is redirected to map_ṕost.log ...")
+print("console output is redirected to map_post.log ...")
 
 stdout = sys.stdout
 
-log = open("log/map_post.log", "w+")
+log = open("map_post.log", "w+")
 sys.stdout = log
 
 mpis = utils.read_json(BASE_DIR + 'mpis/scrape/all.json')
