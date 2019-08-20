@@ -41,7 +41,7 @@ Use these scripts (except `src/map_post.py`) by running:
 ./map
 ```
 
-This will create a mapping (`mpis_ous.json`) from institutes to identifiers at path `../base/data/mpis/map/`. The mapping should be refined manually! Check if institutes not found have in fact corresponding identifiers in MPG.PuRe. After having done this you can run the post-mapping procedure:
+This will create a mapping (`mpi_ous.json`) from institutes to identifiers at path `../base/data/mpis/map/`. The mapping should be refined manually! Check if institutes not found have in fact corresponding identifiers in MPG.PuRe. After having done this you can run the post-mapping procedure:
 
 ```sh
 source env/bin/activate
