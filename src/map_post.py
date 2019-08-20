@@ -52,8 +52,6 @@ print("")
 print(str(counter),"institutes mapped to ous")
 print("")
 print("ignored 'Research Group Social Neuroscience' (part of an institute...)")
-print("")
-print("found",len(ous_mpi),"individual identifiers for institutes!")
 if no_map:
     print("")
     print(len(no_map), "institutes could not be mapped to ou")
@@ -61,6 +59,9 @@ if no_map:
     print("no mapping found for")
     for i in no_map:
         print("    ", i)
+
+print("")
+print("found",len(ous_mpi),"individual identifiers for institutes!")
 
 ########################
 ### MAP: OUS --> CTX ###
@@ -85,6 +86,7 @@ for rec in pure_ctxs['records']:
             collections[maintainer] = [objectId]
 
 m = list(set(mpis_mapped.values()))
+m.sort()
 n = list(collections.keys())
 
 fnd = {}
