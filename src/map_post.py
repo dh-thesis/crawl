@@ -50,6 +50,10 @@ for i in m:
 
 print("")
 print(str(counter),"institutes mapped to ous")
+print("")
+print("ignored 'Research Group Social Neuroscience' (part of an institute...)")
+print("")
+print("found",len(ous_mpi),"individual identifiers for institutes!")
 if no_map:
     print("")
     print(len(no_map), "institutes could not be mapped to ou")
@@ -65,7 +69,6 @@ if no_map:
 print("")
 print("")
 print("map: ous --> ctx")
-print("")
 
 pure_ctxs = utils.read_json(BASE_DIR + 'pure/ctx/all.json')
 
@@ -81,7 +84,7 @@ for rec in pure_ctxs['records']:
         else:
             collections[maintainer] = [objectId]
 
-m = list(mpis_mapped.values())
+m = list(set(mpis_mapped.values()))
 n = list(collections.keys())
 
 fnd = {}
@@ -108,7 +111,6 @@ utils.write_json(BASE_DIR + "mpis/mapped/ous_ctx.json", fnd)
 print("")
 print("")
 print("map: cat --> ous")
-print("")
 cats = utils.read_json(BASE_DIR + 'mpis/scrape/categories.json')
 print("")
 
@@ -164,11 +166,6 @@ print("")
 utils.write_json(BASE_DIR + "mpis/mapped/ous_cat.json", ous_cat)
 
 print("")
-
-# mpis = utils.read_json(BASE_DIR + 'mpis/scrape/all.json')
-# mpis_mapped = utils.read_json(BASE_DIR + 'mpis/map/mpi_ous.json')
-
-# no_map = utils.read_plain_clean(BASE_DIR + 'mpis/map/ous_not_fnd.txt')
 
 m = list(mpis.keys())
 n = list(mpis_mapped.keys())
